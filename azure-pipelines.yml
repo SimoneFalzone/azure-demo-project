@@ -60,6 +60,6 @@ stages:
                 kubernetesServiceConnection: 'k8s-dev02-test01-1679577742522'
                 namespace: 'test01'
                 manifests: |
-                  $(Pipeline.Workspace)/manifests/deployment.yml
-                  $(Pipeline.Workspace)/manifests/service.yml
+                  $(Pipeline.Workspace)/manifest/deployment.yml
+                  $(Pipeline.Workspace)/manifest/service.yml
                 containers: '$(acrdevurl)/$(imageRepo):$(tag)'
