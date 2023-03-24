@@ -34,7 +34,7 @@ stages:
           latest
     - task: PublishPipelineArtifact@1
       inputs:
-        targetPath: '$(Pipeline.Workspace)/s/k8s'
+        targetPath: '$(Build.SourcesDirectory)/k8s'
         artifact: 'manifest'
         publishLocation: 'pipeline'
 - stage: Deploy
@@ -59,6 +59,6 @@ stages:
                 kubernetesServiceConnection: 'k8s-dev02-test01-1679577742522'
                 namespace: 'test01'
                 manifests: |
-                  $(Pipeline.Workspace)/manifests/deployment.yml
-                  $(Pipeline.Workspace)/manifests/service.yml
+                  $(Build.SourcesDirectory)/manifests/deployment.yml
+                  $(Build.SourcesDirectory)/manifests/service.yml
                 containers: '$(acrdevurl)/$(imageRepo):$(tag)'
