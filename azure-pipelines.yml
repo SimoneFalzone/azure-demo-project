@@ -10,7 +10,7 @@ resources:
 
 variables:
   tag: '$(Build.BuildId)'
-  imageRepo: azuredemo
+  imageRepo: sfa123/azuredemo
 
 
 stages:
