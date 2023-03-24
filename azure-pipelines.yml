@@ -10,9 +10,11 @@ resources:
 
 variables:
   tag: '$(Build.BuildId)'
+  imageRepo: azuredemo
+
 
 stages:
-- stage: Build
+- stage: Build & Push
   displayName: Build image
   jobs:
   - job: Build
@@ -23,7 +25,10 @@ stages:
     - task: Docker@2
       displayName: Build an image
       inputs:
-        command: build
+        containerRegistry: 'aeb-acr'
+        repository: '$(imageRepo)'
+        command: buildAndPush
         dockerfile: 'AzureDemoApp/Dockerfile'
         tags: |
           $(tag)
+          latest
