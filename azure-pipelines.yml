@@ -32,3 +32,33 @@ stages:
         tags: |
           $(tag)
           latest
+    - task: PublishPipelineArtifact@1
+      inputs:
+        targetPath: '$(Pipeline.Workspace)/s/k8s'
+        artifact: 'manifest'
+        publishLocation: 'pipeline'
+- stage: Deploy
+  displayName: Deploy to K8s-Dev
+  dependsOn: Build
+  variables:
+    # acrsecret: k8sexamplesacrauth
+    dockerHubUrl: 'docker.io'
+  jobs:
+  - deployment: Deploy
+    displayName: Deploy to AKS
+    environment: 'k8sdev02.test01'
+    pool:
+      vmImage: ubuntu-latest
+    strategy:
+        runOnce:
+          deploy:
+            steps:
+            - task: KubernetesManifest@0
+              inputs:
+                action: 'deploy'
+                kubernetesServiceConnection: 'k8s-dev02-test01-1679577742522'
+                namespace: 'test01'
+                manifests: |
+                  $(Pipeline.Workspace)/manifests/deployment.yml
+                  $(Pipeline.Workspace)/manifests/service.yml
+                containers: '$(acrdevurl)/$(imageRepo):$(tag)'
