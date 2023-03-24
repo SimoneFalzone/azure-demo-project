@@ -14,7 +14,7 @@ variables:
 
 
 stages:
-- stage: Build & Push
+- stage: Build
   displayName: Build image
   jobs:
   - job: Build
