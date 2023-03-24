@@ -17,5 +17,5 @@ FROM openjdk:17-jdk-slim-buster
 
 WORKDIR app
 
-COPY --from gradle-builder /home/gradle/build/libs/AzureDemoApp-0.0.1-SNAPSHOT.jar /app/
+COPY --from=gradle-builder /home/gradle/build/libs/AzureDemoApp-0.0.1-SNAPSHOT.jar /app/
 CMD ["java", "-jar", "/app/AzureDemoApp-0.0.1-SNAPSHOT.jar"]
