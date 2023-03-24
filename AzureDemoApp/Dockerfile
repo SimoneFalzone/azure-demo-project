@@ -12,7 +12,6 @@ COPY ./settings.gradle.kts ./settings.gradle.kts
 COPY ./src ./src
 RUN gradle build --no-daemon
 EXPOSE 8761
-CMD ["java", "-jar", "/home/gradle/build/libs/eureka-0.0.1-SNAPSHOT.jar"]
 
 FROM openjdk:17-jdk-slim-buster
 
