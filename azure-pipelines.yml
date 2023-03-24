@@ -46,7 +46,7 @@ stages:
   jobs:
   - deployment: Deploy
     displayName: Deploy to AKS
-    environment: 'k8sdev02.test01'
+    environment: 'k8s-dev02.test01'
     pool:
       vmImage: ubuntu-latest
     strategy:
