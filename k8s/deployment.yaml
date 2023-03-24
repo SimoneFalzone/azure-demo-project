@@ -1,0 +1,20 @@
+
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: azure-demo 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: azure-demo
+  template:
+    metadata:
+      labels:
+        app: azure-demo 
+    spec:
+      containers:
+        - name: azure-demo 
+          image: sfa123/azuredemo:latest
+          ports:
+          - containerPort: 8080
