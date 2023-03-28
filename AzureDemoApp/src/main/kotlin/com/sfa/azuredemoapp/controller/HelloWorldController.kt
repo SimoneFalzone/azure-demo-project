@@ -11,6 +11,6 @@ class HelloWorldController {
 
     @GetMapping("/hello")
     fun hello(): String {
-        return "Hello from Azure!!!"
+        return "Hello from Azure!!! New Version!!!"
     }
 }
