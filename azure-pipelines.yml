@@ -49,7 +49,7 @@ stages:
     displayName: Deploy to AKS
     environment: 'k8s-dev02.test01'
     pool:
-      vmImage: ubuntu-latest
+      AEBDevAKSAgentPool01
     strategy:
         runOnce:
           deploy:
