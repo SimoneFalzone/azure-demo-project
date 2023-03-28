@@ -20,7 +20,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
-      AEBDevAKSAgentPool01
+      vmImage: ubuntu-latest
     steps:
     - task: PublishPipelineArtifact@1
       inputs:
