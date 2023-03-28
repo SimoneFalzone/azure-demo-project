@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      enabled: true
+      config:
+        fail-fast: false
+        enabled: true
+
+    config:
+      import=consul
