@@ -62,4 +62,7 @@ stages:
                 manifests: |
                   $(Pipeline.Workspace)/manifest/deployment.yaml
                   $(Pipeline.Workspace)/manifest/service.yaml
-                containers: '$(acrdevurl)/$(imageRepo):$(tag)'
+                containers: |
+                  - image: "$(acrdevurl)/$(imageRepo):$(tag)"
+                    
+
