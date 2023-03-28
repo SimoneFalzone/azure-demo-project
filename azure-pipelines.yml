@@ -63,6 +63,6 @@ stages:
                   $(Pipeline.Workspace)/manifest/deployment.yaml
                   $(Pipeline.Workspace)/manifest/service.yaml
                 containers: |
-                  $(dockerHubUrl)/$(imageRepo):$(tag)
+                  $(imageRepo):$(tag)
                     
 
