@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
         - name: azure-demo 
-          image: sfa123/azuredemo:latest
+          image: sfa123/azuredemo
           ports:
           - containerPort: 8080
