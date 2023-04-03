@@ -47,7 +47,7 @@ stages:
   jobs:
   - deployment: Deploy
     displayName: Deploy to AKS
-    environment: 'k8s-dev02.test01'
+    environment: 'k8s-dev01.default'
     pool:
       AEBDevAKSAgentPool01
     strategy:
@@ -58,7 +58,7 @@ stages:
               inputs:
                 action: 'deploy'
                 kubernetesServiceConnection: 'k8s-dev02-test01-1679577742522'
-                namespace: 'test01'
+                namespace: 'default'
                 manifests: |
                   $(Pipeline.Workspace)/manifest/deployment.yaml
                   $(Pipeline.Workspace)/manifest/service.yaml
