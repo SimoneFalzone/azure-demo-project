@@ -57,7 +57,7 @@ stages:
             - task: KubernetesManifest@0
               inputs:
                 action: 'deploy'
-                kubernetesServiceConnection: 'k8s-dev02-test01-1679577742522'
+                kubernetesServiceConnection: 'k8s-dev01-default-1680514007749'
                 namespace: 'default'
                 manifests: |
                   $(Pipeline.Workspace)/manifest/deployment.yaml
