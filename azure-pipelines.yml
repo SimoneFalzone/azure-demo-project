@@ -49,7 +49,7 @@ stages:
     displayName: Deploy to AKS
     environment: 'k8s-dev01.default'
     pool:
-      AEBDevAKSAgentPool01
+      SfaAgentPool
     strategy:
         runOnce:
           deploy:
